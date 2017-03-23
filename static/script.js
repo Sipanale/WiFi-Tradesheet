@@ -394,12 +394,15 @@ function getGameMarkAsClass(gameMark) {
     switch (gameMark) {
         case 7:
             return "black-clover";
-		case "Blue Pentagon":
+		case 6:
             return "blue-pentagon";
         case "Pokémon Go":
             return "go";
-        case "Virtual Console":
+        case 1:
             return "vc";
+        default:
+            return "none";
+
 	}
     return undefined;
 }

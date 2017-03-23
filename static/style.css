@@ -1496,6 +1496,7 @@ span.hidden-power{
 .game-mark.black-clover{background-position:-10px 0}
 .game-mark.vc{background-position:0 -10px}
 .game-mark.go{background-position:-10px -10px}
+.game-mark.none{width:0;height:0}
 
 /* Footer */
 [role="contentinfo"] {
