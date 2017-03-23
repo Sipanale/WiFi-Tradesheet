@@ -145,8 +145,8 @@
         </tbody>
     </table>
     <div id="copy2reddit">
-        <h3>Reddit Table</h3>
-        <p>Click on a row above to add a Pokémon to your Reddit table. Click on it again to remove it.</p>
+        <h3>Info Table</h3>
+        <p>Click a Pokémon to add it to your table, click again to remove. When trading or hosting a GA, simply copy the required row and paste (or Pastebin)!</p>
         <div class="filter">
             <label for="col-picker">Columns to Show</label><!--
             --><select id="col-picker" multiple="multiple">
@@ -157,37 +157,11 @@
                 <option value="evs">EVs</option>
                 <option value="egg-moves">Egg Moves</option>
                 <option value="poke-balls">Poké Ball(s)</option>
-                <option value="language">Language</option>
                 <option value="notes">Notes</option>
             </select>
             <a data-clipboard-target="#markdown">Copy</a>
         </div>
-        <div id="markdown"><!--
-            --><span class="line"><!--
-                --><span class="name">| Pokémon |</span>
-                <span class="trainer">OT/TID |</span>
-                <span class="nature">Nature |</span>
-                <span class="ability">Ability |</span>
-                <span class="ivs">IVs |</span>
-                <span class="evs">EVs |</span>
-                <span class="egg-moves">Egg Moves |</span>
-                <span class="poke-balls">Poké Ball |</span>
-                <span class="language">Language |</span>
-                <span class="notes"> Notes |</span>
-                <br>
-            </span><!--
-            --><span class="line">
-                <span class="name">|---------|</span><!--
-                --><span class="trainer">--------|</span><!--
-                --><span class="nature">--------|</span><!--
-                --><span class="ability">---------|</span><!--
-                --><span class="ivs">:---:|</span><!--
-                --><span class="evs">:---:|</span><!--
-                --><span class="egg-moves">-----------|</span><!--
-                --><span class="poke-balls">-----------|</span><!--
-                --><span class="language">:--------:|</span><!--
-                --><span class="notes">:------|</span>
-                <br>
+        <div id="markdown">
             </span>
         </div>
     </div>
@@ -208,7 +182,6 @@
             <h1>
                 <span class="name"></span> <span class="gender"></span> <span class="level"></span>
             </h1>
-            <span class="language" title=""></span>
             <dl>
                 <dt class="trainer"><abbr title="Original Trainer">OT</abbr></dt><!--
                 --><dd></dd>

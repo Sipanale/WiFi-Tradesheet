@@ -877,9 +877,10 @@ function displayPokemon(){
                 $line.remove();
             } else {
                 var line = "";
+
                 // Pokémon Name
                 var name = $this.data("name");
-                if ($this.data("isshiny")) name = "★ " + name;
+                if ($this.data("isshiny")) name = "Shiny " + name;
                 var gender = $this.data("gender");
                 if (gender == "F") {
                     name += " ♀";
@@ -890,35 +891,34 @@ function displayPokemon(){
                 if (nickname) {
                     name = nickname + " (" + name + ")";
                 }
-                line += "<span class=\"name\">| " + name + " |</span>";
-                // Trainer
-                line += "<span class=\"trainer\"> " + $this.data("ot") + " (" + $this.data("tid") + ")" + " |</span>";
+                line += "<span class=\"name\">" + name + " -</span>";
                 // Nature & Ability
-                line += "<span class=\"nature\"> " + $this.data("nature") + " |</span>";
+                line += "<span class=\"nature\"> " + $this.data("nature") + " -</span>";
                 var ability = $this.data("ability");
                 ability = ability.endsWith('*') ? ability.slice(0,-1) : ability;
                 if ($this.hasClass("hidden-ability")) {
                     ability = "**" + ability + "**";
                 }
-                line += "<span class=\"ability\"> " + ability + " |</span>";
+                line += "<span class=\"ability\"> " + ability + " -</span>";
                 // IVs & EVs
                 var statAttributes = $this.find(".ivs").text();
-                line += "<span class=\"ivs\"> " + statAttributes + " |</span>";
+                line += "<span class=\"ivs\"> " + statAttributes + " -</span>";
                 statAttributes = $this.find(".evs").text();
-                line += "<span class=\"evs\"> " + statAttributes + " |</span>";
+                line += "<span class=\"evs\"> " + statAttributes + " -</span>";
                 // Egg Moves
-                line += "<span class=\"egg-moves\"> " + $this.find(".egg-moves").text() + " |</span>";
+                line += "<span class=\"egg-moves\"> " + $this.find(".egg-moves").text() + " -</span>";
                 // Poké Balls
                 line += "<span class=\"poke-balls\"> ";
                 $this.find(".item-sprite").each(function() {
                     var ball = $(this).text();
-                    line +=  "[](/" + $(this).text().toLowerCase().replace(' ', '').replace('é', 'e') + ") " + $(this).text() + " ";
+                    line +=  $(this).text() + " ";
                 });
-                line += "|</span>";
-                // Language
-                line += "<span class=\"language\"> " + $this.data("language") + " |</span>";
+                line += "</span>";            
                 // Notes
-                line += "<span class=\"notes\"> " + $this.data("notes") + " |</span>";
+                line += "<span class=\"notes\"> " + ($this.data("notes") == undefined ? "</span>" : "- " + $this.data("notes")) + " - </span>";
+                // Trainer
+                line += "<span class=\"trainer\">" + $this.data("ot") + " - " + $this.data("tid");
+
                 // Add line
                 line = "<span class=\"line\" data-id=\"" + id + "\">" + line + "<br></span>";
                 $markdown.append(line);
